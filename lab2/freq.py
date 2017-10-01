@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 #Ex 1,2
 ####################################################################################
+print("EX 1 and 2 ======================================================================================")
 
 ListRus1 = fileToFlatternText('text/LNT_WaP.txt')
 ListEng1 = fileToFlatternText('text/Kipling.txt')
@@ -14,39 +15,80 @@ ex12(ListRus2)
 ex12(ListEng1)
 ex12(ListEng2)
 
-print("======================================================================================")
+
 
 # #Ex 3
 ####################################################################################
-#
-#RUS
+
+print("EX 3 ======================================================================================")
+
+# RUS
 w, c = CounterToLists(ListRus1)
 plotHistOfWords(w, c)
 w, c = CounterToLists(ListRus2)
 plotHistOfWords(w, c)
 
-#ENG
+#E NG
 w, c = CounterToLists(ListEng1)
 plotHistOfWords(w, c)
 w, c = CounterToLists(ListEng2)
 plotHistOfWords(w, c)
 
 
-print("======================================================================================")
-
 #Ex 4
 ####################################################################################
+
+print("EX 4 ======================================================================================")
+
+
 #Rus
 freqOfWords(ListRus1)
 
 #Eng
 freqOfWords(ListEng1)
 
-print("======================================================================================")
+
+#Ex 5
+####################################################################################
+print("EX 5 ======================================================================================")
+
+plt.figure()
+
+width = 0.8
+
+
+w, c = CounterToLists(ListRus1[::1000])
+plt.subplot(221)
+indexes = numpy.arange(len(w))
+plt.bar(indexes, c, width)
+plt.xticks(indexes + width, w)
+
+w, c = CounterToLists(ListRus2[::1000])
+plt.subplot(222)
+indexes = numpy.arange(len(w))
+plt.bar(indexes, c, width)
+plt.xticks(indexes + width, w)
+
+w, c = CounterToLists(ListRus1)
+plt.subplot(223)
+indexes = numpy.arange(len(w))
+plt.bar(indexes, c, width)
+plt.xticks(indexes + width, w)
+
+w, c = CounterToLists(ListRus2)
+plt.subplot(224)
+indexes = numpy.arange(len(w))
+plt.bar(indexes, c, width)
+plt.xticks(indexes + width, w)
+
+
+
+plt.show()
 
 #Ex 6
 ####################################################################################
 
+# print("EX 6 ======================================================================================")
 
 
 ListShift = fileToFlatternText('text/bg-ru.txt')
