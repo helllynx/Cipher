@@ -3,6 +3,7 @@ from chardet.universaldetector import UniversalDetector
 
 #SHIT CODE, I KNOW
 
+
 def get_encoding(file):
     detector = UniversalDetector()
     # for filename in glob.glob('/home/gene/MIET/7_semestr/EXP/OTIK/ОТИК/ОТИК лаб/Лаб_3_Кодировки/Тексты/unix-iso8859-5.txt'):
@@ -29,7 +30,7 @@ def get_readable_text(file):
     return convert_encoding(lines, get_encoding(file_path), 'UTF-8').decode('UTF-8')
 
 
-file_path = '/home/gene/MIET/7_semestr/EXP/OTIK/ОТИК/ОТИК лаб/Лаб_3_Кодировки/Тексты/unix-iso8859-5.txt'
+file_path = '/home/yenq/MIET/LABS/Cipher/lab3/3encode.txt'
 
 with open('output.txt', 'w') as myfile:
     myfile.write(get_readable_text(file_path))
